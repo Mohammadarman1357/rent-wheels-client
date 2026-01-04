@@ -41,14 +41,14 @@ const MyProfile = () => {
 
 
     return (
-        <div>
+        <div className='flex justify-center'>
 
-            <div className='flex flex-col gap-2 items-center'>
-                <div className='flex gap-5 items-center mt-2'>
-                    <Link to={'/myprofile'}><img className='w-10 rounded-full' src={`${user?.photoURL}`} alt="" /></Link>
-                    <h1>{user?.displayName}</h1>
+            <div className='bg-white shadow-md rounded-xl p-5 flex flex-col items-center w-80'>
+                <div className='mt-2'>
+                    <img className='w-30 mx-auto rounded-full' src={`${user?.photoURL}`} alt="" />
+                    <h1 className='font-bold text-center text-xl'>{user?.displayName}</h1>
                 </div>
-                <button onClick={handlelogOut} className='btn border-none bg-gradient-to-r from-[#632ee3] to-[#9f62f2] text-white px-10 mt-2 w-full'>LogOut</button>
+                <button onClick={handlelogOut} className='btn btn-primary text-white px- mt-2 w-1/2'>LogOut</button>
             </div>
 
 

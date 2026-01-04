@@ -1,13 +1,12 @@
 import React, { use } from 'react';
-import { Link } from 'react-router';
 import { House, } from 'lucide-react';
 import { AuthContext } from '../Context/AuthContext';
-import Swal from 'sweetalert2';
 import { FaCar } from 'react-icons/fa';
 import { TbBrowserMaximize } from 'react-icons/tb';
 import { RiApps2AddLine } from 'react-icons/ri';
 import { CiCircleList } from 'react-icons/ci';
 import { LuNotebookText } from 'react-icons/lu';
+import { Link } from 'react-router';
 
 
 const Navbar = () => {
@@ -52,7 +51,9 @@ const Navbar = () => {
                             {
                                 user ?
                                     <div className='flex gap-5 items-center mt-2'>
-                                        <Link to={'/myprofile'}><img className='w-10 rounded-full' src={`${user?.photoURL}`} alt="" /></Link>
+                                        <Link to={'/auth/myProfile'}>
+                                            <img className='w-10 rounded-full' src={`${user?.photoURL}`} alt="" />
+                                        </Link>
                                         <h1>{user?.displayName}</h1>
                                     </div>
                                     :
@@ -85,7 +86,9 @@ const Navbar = () => {
                     {
                         user ?
 
-                            <Link to={'/myprofile'}><img className='w-12 rounded-full' src={`${user?.photoURL}`} alt="" /></Link>
+                            <Link to={'/auth/myProfile'}>
+                                <img className='w-12 rounded-full' src={`${user?.photoURL}`} alt="" />
+                            </Link>
 
                             :
                             <div className='flex gap-2 items-center'>
