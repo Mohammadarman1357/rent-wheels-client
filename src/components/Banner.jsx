@@ -47,7 +47,7 @@ const Banner = () => {
                         <div className="h-full w-full bg-cover bg-center"
                             style={{ backgroundImage: `url(${car.image})` }}>
 
-                            <div className="h-full w-full flex items-center">
+                            <div className="h-full w-full bg-[#0d007ec9] flex items-center">
 
                                 {/* Text Left */}
                                 <div className="px-6 md:px-16 max-w-xl text-white">
