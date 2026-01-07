@@ -54,7 +54,7 @@ const Login = () => {
                 }
 
                 //create database in the database
-                fetch('https://smart-deals-api-server-cyebh8ya8.vercel.app/users', {
+                fetch('http://localhost:3000/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
