@@ -7,13 +7,6 @@ import { Link } from 'react-router';
 const Car = ({ featuredCar }) => {
     const { _id, carName, pricePerDay, category, providerName, image, location } = featuredCar;
 
-
-    // ■	Car Name
-    // ■	Rent Price (per day)
-    // ■	Car Type / Model
-    // ■	Provider Name
-    // ■	“View Details” button (redirects to car details page)
-
     return (
         <div className="card bg-base-100 shadow-sm">
             <figure className="p-4">
@@ -44,7 +37,7 @@ const Car = ({ featuredCar }) => {
                     <span className='badge badge-soft badge-primary flex rounded-full'><IoLogoModelS></IoLogoModelS> {category}</span>
                 </span>
                 <div className="card-actions">
-                    <Link to={`/productDetails/${_id}`} className="btn btn-primary w-full font-semibold">View Details</Link>
+                    <Link to={`/carDetails/${_id}`} className="btn btn-primary w-full font-semibold">View Details</Link>
                 </div>
             </div>
         </div>

@@ -6,6 +6,8 @@ import ErrorPage from "../pages/ErrorPage.jsx";
 import Home from "../components/Home.jsx";
 import Root from "../layouts/Root.jsx";
 import MyProfile from "../components/MyProfile.jsx";
+import CarDetails from "../components/CarDetails.jsx";
+import PrivateRoute from "../provider/PrivateRoute.jsx";
 
 const router = createBrowserRouter([
     {
@@ -15,6 +17,13 @@ const router = createBrowserRouter([
             {
                 index: true,
                 Component: Home
+            },
+            {
+                path: '/carDetails/:id',
+                loader: ({ params }) => fetch(`http://localhost:3000/cars/${params.id}`),
+                element: <PrivateRoute>
+                    <CarDetails></CarDetails>
+                </PrivateRoute>
             }
         ]
     },
