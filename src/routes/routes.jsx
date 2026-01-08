@@ -8,6 +8,7 @@ import Root from "../layouts/Root.jsx";
 import MyProfile from "../components/MyProfile.jsx";
 import CarDetails from "../components/CarDetails.jsx";
 import PrivateRoute from "../provider/PrivateRoute.jsx";
+import AddCar from "../components/AddCar.jsx";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +24,12 @@ const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`http://localhost:3000/cars/${params.id}`),
                 element: <PrivateRoute>
                     <CarDetails></CarDetails>
+                </PrivateRoute>
+            },
+            {
+                path:'/addCar',
+                element:<PrivateRoute>
+                    <AddCar></AddCar>
                 </PrivateRoute>
             }
         ]
