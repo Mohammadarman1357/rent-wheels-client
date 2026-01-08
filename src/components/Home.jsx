@@ -10,7 +10,9 @@ const featuredCarsPromise = fetch('http://localhost:3000/featured-cars').then(re
 const Home = () => {
     return (
         <div>
-            <Banner></Banner>
+            <Suspense fallback={<Loading></Loading>}>
+                <Banner featuredCarsPromise={featuredCarsPromise}></Banner>
+            </Suspense>
 
             <Suspense fallback={<Loading></Loading>}>
                 <FeaturedCars featuredCarsPromise={featuredCarsPromise}></FeaturedCars>
