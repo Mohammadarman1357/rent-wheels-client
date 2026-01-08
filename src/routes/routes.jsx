@@ -9,6 +9,7 @@ import MyProfile from "../components/MyProfile.jsx";
 import CarDetails from "../components/CarDetails.jsx";
 import PrivateRoute from "../provider/PrivateRoute.jsx";
 import AddCar from "../components/AddCar.jsx";
+import BrowseCars from "../components/BrowseCars.jsx";
 
 const router = createBrowserRouter([
     {
@@ -20,6 +21,11 @@ const router = createBrowserRouter([
                 Component: Home
             },
             {
+                path: '/browseCars',
+                loader: () => fetch('http://localhost:3000/cars'),
+                element: <BrowseCars></BrowseCars>
+            },
+            {
                 path: '/carDetails/:id',
                 loader: ({ params }) => fetch(`http://localhost:3000/cars/${params.id}`),
                 element: <PrivateRoute>
@@ -27,8 +33,8 @@ const router = createBrowserRouter([
                 </PrivateRoute>
             },
             {
-                path:'/addCar',
-                element:<PrivateRoute>
+                path: '/addCar',
+                element: <PrivateRoute>
                     <AddCar></AddCar>
                 </PrivateRoute>
             }

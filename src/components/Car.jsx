@@ -4,12 +4,12 @@ import { FaUserCog } from 'react-icons/fa';
 import { IoLogoModelS } from 'react-icons/io';
 import { Link } from 'react-router';
 
-const Car = ({ featuredCar }) => {
-    const { _id, carName, pricePerDay, category, providerName, image, location } = featuredCar;
+const Car = ({ car }) => {
+    const { _id, carName, pricePerDay, category, providerName, image } = car;
 
     return (
         <div className="card bg-base-100 shadow-sm">
-            <figure className="p-4">
+            <figure className="px-4 pt-4">
                 <img
                     src={image}
                     alt={carName}
@@ -17,6 +17,7 @@ const Car = ({ featuredCar }) => {
                 />
             </figure>
             <div className="card-body">
+
                 <h2 className="card-title text-2xl font-bold">{carName}</h2>
 
                 <span className='flex items-center justify-between'>
@@ -24,10 +25,12 @@ const Car = ({ featuredCar }) => {
                         <FaUserCog></FaUserCog>
                         <p>{providerName}</p>
                     </span>
-                    <span className='flex gap-1 items-center'>
-                        <CiLocationOn></CiLocationOn>
-                        <p>{location}</p>
-                    </span>
+                    {
+                        car?.status == "available" ?
+                            <span className='badge bg-green-500 rounded-full mr-2 font-semibold'>{car.status}</span>
+                            :
+                            <span className='badge bg-red-500 font-semibold rounded-full mr-2'>Unavailable</span>
+                    }
                 </span>
 
                 <hr className='my-2' />

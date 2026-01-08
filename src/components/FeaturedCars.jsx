@@ -13,9 +13,9 @@ const FeaturedCars = ({ featuredCarsPromise }) => {
 
             <div className='grid p-4 gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {
-                    featuredCars.map(featuredCar =>
-                        <Car key={featuredCar._id}
-                            featuredCar={featuredCar}>
+                    featuredCars.map(car =>
+                        <Car key={car._id}
+                            car={car}>
                         </Car>
                     )
                 }
